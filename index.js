@@ -13,7 +13,9 @@ Dump.prototype.offset = function(line){
 
 Dump.prototype.hex = function(buf){
   var out = [];
-  for (var i = 0; i < buf.length; i++) out.push(buf[i].toString(16))
+  for (var i = 0; i < buf.length; i++) {
+    out.push(pad(buf[i], 2));
+  }
   return out;
 };
 
