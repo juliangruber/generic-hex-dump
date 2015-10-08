@@ -35,7 +35,12 @@ Dump.prototype.lines = function(){
 
 Dump.prototype.printable = function(v){
   return v >= 32 && v <= 126;
-}
+};
+
+Dump.prototype.slice = function(buf, line){
+  var off = line * 16;
+  return buf.slice(off, off + 16);
+};
 
 function pad(n, max){
   var out = n.toString(16);

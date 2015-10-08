@@ -5,8 +5,7 @@ var dump = new Dump(buf.length);
 
 var lines = dump.lines();
 for (var i = 0; i < lines; i++) {
-  var off = i * 16;
-  var slice = buf.slice(off, off + 16);
+  var slice = dump.slice(buf, i);
   console.log(
     dump.offset(i),
     dump.hex(slice).join(' '),
