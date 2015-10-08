@@ -1,0 +1,13 @@
+{
+  "name": "generic-hex-dump",
+  "version": "0.0.0",
+  "description": "Get individual lines of a typical hex dump",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": "juliangruber/generic-hex-dump",
+  "devDependencies": {
+    "tape": "*"
+  },
+  "license": "MIT"
+}
