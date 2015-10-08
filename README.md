@@ -63,6 +63,10 @@ $ npm install generic-hex-dump
 
   Create an array of 1-character strings for each byte in `slice`, defaulting to `.` if a byte's value isn't human readable.
 
+### .offsetWidth
+
+  Get the width of the offset column.
+
 ## License
 
   MIT

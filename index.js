@@ -42,6 +42,10 @@ Dump.prototype.slice = function(buf, line){
   return buf.slice(off, off + 16);
 };
 
+Dump.prototype.offsetWidth = function(){
+  return this._offsetWidth;
+};
+
 function pad(n, max){
   var out = n.toString(16);
   while (out.length < max) out = '0' + out;
