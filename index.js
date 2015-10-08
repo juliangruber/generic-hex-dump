@@ -22,7 +22,7 @@ Dump.prototype.hex = function(buf){
 Dump.prototype.strings = function(buf){
   var out = [];
   for (var i = 0; i < buf.length; i++) {
-    out.push(printable(buf[i])
+    out.push(this.printable(buf[i])
       ? String.fromCharCode(buf[i])
       : '.');
   }
@@ -33,7 +33,7 @@ Dump.prototype.lines = function(){
   return this._lines;
 };
 
-function printable(v){
+Dump.prototype.printable = function(v){
   return v >= 32 && v <= 126;
 }
 
