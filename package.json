@@ -1,6 +1,6 @@
 {
   "name": "generic-hex-dump",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Get individual lines of a typical hex dump",
   "scripts": {
     "test": "make test"
