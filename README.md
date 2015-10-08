@@ -1,7 +1,7 @@
 
 # generic-hex-dump
 
-  Get individual lines of a typical hex dump.
+  Get individual lines of a typical hex dump. Use this to implement your own interface or whatever else you want.
 
 ## Example
 
