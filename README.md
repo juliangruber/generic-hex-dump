@@ -63,9 +63,13 @@ $ npm install generic-hex-dump
 
   Create an array of 1-character strings for each byte in `slice`, defaulting to `.` if a byte's value isn't human readable.
 
-### .offsetWidth
+### .offsetWidth()
 
   Get the width of the offset column.
+
+### .printable(v)
+
+  Check if character code `v` is printable. Override this function to change what `.strings()` replaces with a `.`.
 
 ## License
 
