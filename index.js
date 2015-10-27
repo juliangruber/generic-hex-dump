@@ -5,6 +5,7 @@ function Dump(length){
   this._length = length;
   this._offsetWidth = Math.max(length.toString(16).length, 6);
   this._lines = Math.ceil(length / 16);
+  this._replace = {};
 }
 
 Dump.prototype.offset = function(line){
@@ -22,9 +23,13 @@ Dump.prototype.hex = function(buf){
 Dump.prototype.strings = function(buf){
   var out = [];
   for (var i = 0; i < buf.length; i++) {
-    out.push(this.printable(buf[i])
-      ? String.fromCharCode(buf[i])
-      : '.');
+    var char = buf[i];
+    if (this._replace[char]) {
+      char = this._replace[char];
+    } else if (!this.printable(char)) {
+      char = '.'.charCodeAt(0);
+    }
+    out.push(String.fromCharCode(char));
   }
   return out;
 };
@@ -35,6 +40,12 @@ Dump.prototype.lines = function(){
 
 Dump.prototype.printable = function(v){
   return v >= 32 && v <= 126;
+};
+
+Dump.prototype.replace = function(from, to){
+  if (typeof from == 'string') from = from.charCodeAt(0);
+  if (typeof to == 'string') to = to.charCodeAt(0);
+  this._replace[from] = to;
 };
 
 Dump.prototype.slice = function(buf, line){

@@ -71,6 +71,18 @@ $ npm install generic-hex-dump
 
   Check if character code `v` is printable. Override this function to change what `.strings()` replaces with a `.`.
 
+### .replace(from, to)
+
+  In the string column, replace character `from` with `to`. Either can be a char code or a single character string. If this is defined for a character, the `.printable()` check will be bypassed.
+
+  Example:
+  
+  Replace all occurences of `\r` with `␍`:
+
+```js
+  dump.replace('\r', '␍');
+```
+
 ## License
 
   MIT

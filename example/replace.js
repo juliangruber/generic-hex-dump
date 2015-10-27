@@ -1,7 +1,11 @@
-var Dump = require('./');
+var Dump = require('..');
 
-var buf = Buffer('abcdefghijklmnopqrstuvwxyz0123456789><\x00\x00');
+var buf = Buffer('   \n   \r   \t   ');
 var dump = new Dump(buf.length);
+
+dump.replace('\n'.charCodeAt(0), 'N'.charCodeAt(0));
+dump.replace('\r', '␍');
+dump.replace('\t', 'T');
 
 var lines = dump.lines();
 for (var i = 0; i < lines; i++) {
