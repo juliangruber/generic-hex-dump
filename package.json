@@ -7,7 +7,7 @@
   },
   "repository": "juliangruber/generic-hex-dump",
   "devDependencies": {
-    "tape": "*"
+    "tape": "4.3.0"
   },
   "license": "MIT"
 }
